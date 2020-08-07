@@ -118,7 +118,7 @@ rootUser:
   forcePassword: true
   ## Mount admin password as a file instead of using an environment variable
   ##
-  injectSecretsAsVolume: true
+  injectSecretsAsVolume: false
 
 ## Custom user/db credentials
 ##
@@ -126,19 +126,19 @@ db:
   ## MariaDB username and password
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-user-on-first-run
   ##
-  user: otrs
+  user: test123
   password: changeme
   ## Database to create
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-on-first-run
   ##
-  name: otrs
+  name: test123
   ## Option to force users to specify a password. That is required for 'helm upgrade' to work properly.
   ## If it is not force, a random password will be generated.
   ##
   forcePassword: true
   ## Mount user password as a file instead of using an environment variable
   ##
-  injectSecretsAsVolume: true
+  injectSecretsAsVolume: false
 
 ## Replication configuration
 ##
@@ -161,7 +161,7 @@ replication:
   forcePassword: true
   ## Mount replication user password as a file instead of using an environment variable
   ##
-  injectSecretsAsVolume: true
+  injectSecretsAsVolume: false
 
 ## initdb scripts
 ## Specify dictionary of scripts to be run at first boot
@@ -465,7 +465,7 @@ slave:
     annotations: {}
 
 metrics:
-  enabled: true
+  enabled: false
   image:
     registry: docker.io
     repository: bitnami/mysqld-exporter
